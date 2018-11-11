@@ -1,0 +1,11 @@
+<div class="container mt-5">
+  <h2 class="text-center">Angular 7 Redux authentification demo</h2>
+  <div class="card mt-4">
+    <div class="card-body">
+      <ng-container *ngIf="user$ | async as user">
+        Welcome back {{user?.displayName}}!
+      </ng-container>
+      <a routerLink="/auth/login" routerLinkActive="active-link" class="m-2">Logout</a>
+    </div>
+  </div>
+</div>

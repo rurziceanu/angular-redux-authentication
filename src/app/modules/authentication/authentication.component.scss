@@ -1,0 +1,26 @@
+.myapp-wrapper {
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+
+    .myapp-auth-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding-top: 30px;
+        padding-left: 16px;
+        padding-right: 16px;
+
+        h3 {
+            width: 100%;
+            letter-spacing: 0.3rem;
+            margin-bottom: 30px !important;
+            margin-top: 50px;
+            color: #000000;
+        }
+    }
+
+    .myapp-form-container {
+        background: #FFF;
+        border: 1px solid #d8dee2;
+    }
+}

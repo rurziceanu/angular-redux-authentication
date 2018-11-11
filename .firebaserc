@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "staging": "redux-auth-staging",
+    "prod": "redux-auth"
+  }
+}

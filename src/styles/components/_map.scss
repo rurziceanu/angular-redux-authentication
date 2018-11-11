@@ -1,0 +1,13 @@
+// customize fleaflet map
+.leaflet-popup-pane {
+    .leaflet-popup-content-wrapper {
+        border-radius: 2px;
+
+        .leaflet-popup-content {
+            border-radius: 2px;
+        }
+    }
+    .leaflet-popup-tip-container {
+        //display: none;
+    }
+}

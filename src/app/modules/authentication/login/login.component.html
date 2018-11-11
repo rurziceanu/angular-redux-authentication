@@ -1,0 +1,79 @@
+<ng-container *ngIf="user$ | async as user">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="row no-gutters">
+        <div class="col-12">
+          <div class="form-group">
+            <div class="input-group">
+              <input type="email" class="form-control rounded" placeholder="Enter email" formControlName="email"
+                required [ngClass]="{ 'is-invalid': f.email.errors && submited }">
+                <ng-container *ngIf="f.email.errors && submited">
+                    <div *ngIf="f.email.errors.required" class="invalid-tooltip d-block">
+                        Please enter an email address.
+                      </div>
+                      <div *ngIf="f.email.errors.email" class="invalid-tooltip d-block">
+                          Please enter a valid email address.
+                        </div>
+                </ng-container>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-group">
+            <div class="input-group">
+              <input placeholder="Enter Password" class="form-control rounded" type="password"
+              formControlName="password" required [ngClass]="{ 'is-invalid': f.password.errors && submited }">
+                <ng-container *ngIf="f.password.errors && submited">
+                    <div *ngIf="f.password.errors.required" class="d-block invalid-tooltip">
+                        Please enter a valid password.
+                      </div>
+                </ng-container>
+            </div>
+            <a class="d-block float-right" href="javascript:">Forgot password?</a>
+          </div>
+        </div>
+        <div class="col-12 text-center">
+          <button type="submit" [(disabled)]="user.loading" [ngClass]="{'loading': user.loading}" class="mt-4 btn btn-lg btn-block btn-primary">
+            <span *ngIf="user.loading===false">Log in</span>
+            <span *ngIf="user.loading">
+              <fa-icon [icon]="['fas', 'spinner']" [pulse]="true"></fa-icon>
+            </span>
+          </button>
+        </div>
+      </div>
+    </form>
+    <div class="row no-gutters">
+      <div class="col-12 myapp-login-with">
+        <span>or login with</span>
+        <div class="myapp-line myapp-devider-bg"></div>
+      </div>
+      <div class="col-12  text-center">
+        <button (click)="onGoogleLogin()" [(disabled)]="user.loading" [ngClass]="{'loading': user.loading}" class="mt-4 myapp-btn-login btn btn-block myapp-btn-google">
+          <span class="mr-3 float-left" *ngIf="user.loading===false">
+            <fa-icon [icon]="['fab', 'google']"></fa-icon>
+          </span>
+          <span *ngIf="user.loading">
+            <fa-icon [icon]="['fas', 'spinner']" [pulse]="true"></fa-icon>
+          </span>
+          <span *ngIf="user.loading===false">Log in with Google</span>
+        </button>
+      </div>
+      <div class="col-12  text-center">
+        <button (click)="onFacebookLogin()" [(disabled)]="user.loading" [ngClass]="{'loading': user.loading}" class="mt-3 btn myapp-btn-login btn-block myapp-btn-fb">
+          <span *ngIf="user.loading">
+            <fa-icon [icon]="['fas', 'spinner']" [pulse]="true"></fa-icon>
+          </span>
+          <span *ngIf="user.loading===false" class="mr-3 float-left">
+            <fa-icon [icon]="['fab', 'facebook-f']"></fa-icon>
+          </span>
+          <span *ngIf="user.loading===false">Log in with facebook</span>
+        </button>
+      </div>
+      <div class="col-12 text-center pt-4">
+        <p>
+          <span>Don't have an account?
+            <a [routerLink]="['/auth/register']">Sign up</a>
+          </span>
+        </p>
+      </div>
+    </div>
+</ng-container>

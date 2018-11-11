@@ -1,0 +1,96 @@
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+  <div class="row">
+    <div class="col-12">
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" class="form-control rounded" placeholder="First name" formControlName="firstName"
+            [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" required>
+          <ng-container *ngIf="submitted && f.firstName.errors">
+            <div *ngIf="submitted && f.firstName.errors.required" class="d-block invalid-tooltip">
+              Please enter your first name.
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" class="form-control rounded" placeholder="Last name" formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+            required>
+          <ng-container *ngIf="submitted && f.lastName.errors">
+            <div *ngIf="submitted && f.lastName.errors.required" class="d-block invalid-tooltip">
+              Please enter your last name.
+            </div>
+          </ng-container>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="col-12">
+      <div class="form-group">
+        <div class="input-group">
+          <input type="email" class="form-control rounded" placeholder="Email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+            required>
+          <ng-container *ngIf="submitted && f.email.errors">
+            <div *ngIf="f.email.errors.required" class="invalid-tooltip d-block">
+              Please enter an email address.
+            </div>
+            <div *ngIf="f.email.errors.email" class="invalid-tooltip d-block">
+              Please enter a valid email address.
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-12">
+      <div class="form-group">
+        <div class="input-group">
+          <input placeholder="Enter Password" class="form-control rounded" type="password" formControlName="password"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required>
+          <ng-container *ngIf="submitted && f.password.errors">
+            <div *ngIf="submitted && f.password.errors.required" class="d-block invalid-tooltip">
+              Please enter a valid password.
+            </div>
+            <div *ngIf="submitted && f.password.errors.minlength" class="d-block invalid-tooltip">
+              Password must be at least 6 characters.
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="input-group">
+        <input placeholder="Confirm Password" class="form-control rounded" type="password" formControlName="confirmPassword"
+          [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" required>
+        <ng-container *ngIf="submitted && f.confirmPassword.errors">
+          <div *ngIf="submitted && f.confirmPassword.errors.required" class="d-block invalid-tooltip">
+            Please enter the password confirmation.
+          </div>
+          <div *ngIf="submitted && f.confirmPassword.errors.mustMatch" class="d-block invalid-tooltip">
+            Passwords must match.
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="col-12 d-flex justify-content-center mb-3">
+      <button type="submit" [(disabled)]="loading" [ngClass]="{'loading': loading}" class="btn mt-4 btn-lg btn-block btn-primary">
+        <span *ngIf="loading==false">Sign up</span>
+        <span *ngIf="loading">
+          <fa-icon [icon]="['fas', 'spinner']" pulse="true"></fa-icon>
+        </span>
+      </button>
+    </div>
+    <p class="mat-hint text-center w-100"> By creating an account, you agree to our
+      <br>
+      <a href="javascript:">Terms of Service</a>
+      and
+      <a href="javascript:">Privacy Policy</a>.
+    </p>
+    <p class="text-center w-100 mt-3"> Already have an account?
+      <a [routerLink]="['/auth/login']" tabindex="0">Log in.</a>
+    </p>
+  </div>
+</form>

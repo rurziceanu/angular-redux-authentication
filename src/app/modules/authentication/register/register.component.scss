@@ -1,0 +1,11 @@
+.myapp-form-actions {
+  .myapp-btn-register {
+    min-width: auto;
+    width: 100%;
+    transition: width 500ms ease;
+
+    &.loading {
+      width: 50px;
+    }
+  }
+}

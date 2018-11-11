@@ -1,0 +1,43 @@
+.expero-border-none {
+  border: none;
+}
+
+.expero-border-solid {
+  border: 1px solid $border-color;
+}
+
+.expero-border-left-solid {
+  border-left: 1px solid $border-color;
+}
+
+.expero-border-top-solid {
+  border-top: 1px solid $border-color;
+}
+
+.expero-border-right-solid {
+  border-right: 1px solid $border-color;
+}
+
+.expero-border-bottom-solid {
+  border-bottom: 1px solid $border-color;
+}
+
+.expero-border-dotted {
+  border: 1px dotted $border-color;
+}
+
+.expero-border-left-dotted {
+  border-left: 1px dotted $border-color;
+}
+
+.expero-border-top-dotted {
+  border-top: 1px dotted $border-color;
+}
+
+.expero-border-right-dotted {
+  border-right: 1px dotted $border-color;
+}
+
+.expero-border-bottom-dotted {
+  border-bottom: 1px dotted $border-color;
+}

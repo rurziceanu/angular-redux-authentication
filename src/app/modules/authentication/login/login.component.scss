@@ -1,0 +1,32 @@
+.myapp-btn-fb {
+  background-color: #4267b2 !important;
+  color: #FFF !important;
+}
+
+.myapp-btn-google {
+  background-color: #ee503d !important;
+  color: #FFF !important;
+}
+
+.myapp-login-with {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  position: relative;
+
+  span {
+    z-index: 1;
+    padding: 0 15px;
+    background-color: #FFF;
+  }
+
+  .myapp-line {
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    background-color: #eee;
+  }
+}
