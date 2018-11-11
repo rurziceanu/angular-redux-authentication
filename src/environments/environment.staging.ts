@@ -2,11 +2,11 @@ export const environment = {
   production: false,
   envName: 'staging',
   firebaseConfig: { // firebase configuration for staging, replace with your own project variables.
-    apiKey: 'AIzaSyDvCjr8JQuGtbwf41qsZdSOHTOrgMYzu1E',  // Fallow firebase configuration article in wiki section
-    authDomain: 'gitlab-ci-staging-test.firebaseapp.com',
-    databaseURL: 'https://gitlab-ci-staging-test.firebaseio.com',
-    projectId: 'gitlab-ci-staging-test',
-    storageBucket: 'gitlab-ci-staging-test.appspot.com',
-    messagingSenderId: '12027949275'
+    apiKey: "AIzaSyC2AO4gLgP1M3c-4nMf05GfGYFmDNvLq7U",
+    authDomain: "redux-auth-angular.firebaseapp.com",
+    databaseURL: "https://redux-auth-angular.firebaseio.com",
+    projectId: "redux-auth-angular",
+    storageBucket: "redux-auth-angular.appspot.com",
+    messagingSenderId: "115607357892"
   }
 };

@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit, OnDestroy {
         private alertService: AlertService,
         private formBuilder: FormBuilder
         ) {
-            console.log('constructor');
             this.loginForm = this.formBuilder.group({
                 email: ['', [Validators.required, Validators.email]],
                 password: ['', Validators.required]
@@ -100,7 +99,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
 
     login() {
-        console.log(this.loginForm.value);
         this.submited = true;
         // stop here if form is invalid
         if (this.loginForm.invalid) {

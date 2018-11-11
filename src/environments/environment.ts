@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebaseConfig: { // firebase configuration for staging
-    apiKey: 'AIzaSyC3wzMNa0RaAboJuePPj3SBnEO7ST3Sdv8',
-    authDomain: 'vepo-staging.firebaseapp.com',
-    databaseURL: 'https://vepo-staging.firebaseio.com',
-    projectId: 'vepo-staging',
-    storageBucket: 'vepo-staging.appspot.com',
-    messagingSenderId: '901859852634'
+    apiKey: "AIzaSyC2AO4gLgP1M3c-4nMf05GfGYFmDNvLq7U",
+    authDomain: "redux-auth-angular.firebaseapp.com",
+    databaseURL: "https://redux-auth-angular.firebaseio.com",
+    projectId: "redux-auth-angular",
+    storageBucket: "redux-auth-angular.appspot.com",
+    messagingSenderId: "115607357892"
   }
 };
 
